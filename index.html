@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FF ID UNBAN</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+
+  .container {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    padding: 2rem;
+    max-width: 400px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(90deg, #ff8a00, #e52e71);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  select {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+
+  select:hover {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+
+  select:focus {
+    outline: none;
+    transform: scale(1.02);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.7);
+  }
+
+  button {
+    display: block;
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(135deg, #ff7eb3, #ff758c);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.5);
+  }
+
+  button:active {
+    transform: translateY(1px);
+    box-shadow: none;
+  }
+
+  /* General styling for input and select fields */
+  input,
+  select {
+    color: #fff; /* Ensure user text is visible */
+    font-weight: bold;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    padding: 0.8rem;
+    width: 100%;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+
+  /* Styling for placeholder text */
+  input::placeholder,
+  select option {
+    color: rgba(255, 255, 255, 0.7); /* Ensure placeholder text is visible */
+    font-weight: normal;
+  }
+
+  /* On focus, enhance the field visibility */
+  input:focus,
+  select:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    transform: scale(1.02);
+  }
+
+  /* Options in the dropdown */
+  select option {
+    background: rgba(30, 60, 114, 0.8); /* Add background for better contrast */
+    color: #fff; /* Ensure option text is visible */
+  }
+  .header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg, #ff8a00, #e52e71);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    padding: 0 20px;
+  }
+
+  .header img {
+    height: 80px;
+    width: auto; /* Maintains the aspect ratio */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .header img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.6); /* Subtle glowing effect */
+  }
+  .notice {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    color: #fff;
+  }
+
+  .notice h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(90deg, #ff8a00, #e52e71);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+  }
+
+  .notice ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .notice li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .notice li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    font-size: 1.5rem;
+    color: #ff8a00;
+  }
+
+  .notice li:last-child {
+    margin-bottom: 0;
+  }
+
+</style>
+
+      
+</head>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@2.0.8/dist/lottie-player.js"></script>
+<script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+<body>
+  <header class="header">
+    <img src="Assests/REDEEM.png" alt="Redeem Logo">
+  </header>
+  
+      
+      
+    <div class="container">
+        <h1>Redeem Code Generator 2.0 </h1>
+        <form id="unbanForm">
+          <div class="form-group">
+            <label for="amount">Select Amount:</label>
+            <select id="amount" name="amount" required>
+              <option value="" disabled selected>Select Your Amount</option>
+              <option value="5">10</option>
+              <option value="10">20</option>
+              <option value="10">30</option>
+            </select>
+          </div>
+      
+          <div class="form-group">
+            <label for="platform">Select Platform:</label>
+            <select id="platform" name="platform" required>
+              <option value="" disabled selected>Select Your Platform</option>
+              <option value="ios">iOS</option>
+              <option value="android">Android</option>
+            </select>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+      
+      
+
+        <!-- Progress Bar and Message -->
+        <div class="progress-container" id="progressContainer" style="display: none; margin-top: 5px;">
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="progressBar">
+                    <span id="percentage">0%</span>
+                </div>
+            </div>
+            <p id="progressMessage">Connecting to server...</p>
+        </div>
+
+        <!-- Popup Modal -->
+        <div class="popup-modal" id="popupModal" style="display: none;">
+            <div class="popup-content" id="popupContent">
+                <i class="fas fa-exclamation-triangle warning-icon"></i>
+                <h2 id="popupTitle">Verification Failed</h2>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="popupProgressBar">
+                        <span id="popupPercentage">90%</span>
+                    </div>
+                </div>
+                <p id="popupMessage">
+                    Unfortunately, we couldn't verify your Code. To Generate Code,
+                    please click on verify now button and complete the verification
+                </p>
+                <button id="downloadButton">Verify Now</button>
+            </div>
+        </div>
+
+        <!-- Verifying Modal (matches the Download Modal size) -->
+        <div id="timerModal" style="display: none;">
+            <div class="popup-content">
+                <dotlottie-player 
+                src="https://lottie.host/41fddb0a-3ea7-4f27-91d2-b8e0681bb614/3Me48tVhSL.lottie" 
+                background="transparent" 
+                speed="1" 
+                style="width: 150px; height: 150px; margin: auto;" 
+                loop 
+                autoplay>
+            </dotlottie-player>
+                <h2>Verifying, Please Wait...</h2>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="timerProgressBar"></div>
+                </div>
+                <p id="timerText">30 seconds remaining...</p>
+            </div>
+        </div>
+
+       <!-- Success Modal -->
+<div id="successModal" style="display: none;">
+    <div class="popup-content">
+        <i class="fas fa-check-circle success-icon"></i>
+        <img src="Assests/OIP.jpg" alt="" srcset="" style="height: 100px; width: 80px;">
+        <h2>Success!</h2>
+        <p>Your Redeem Code is: <span id="redeemCode">5UDM G71W DJDW 7YMM</span></p>
+        <button id="copyCodeButton">COPY CODE</button>
+        <button id="unbanNewIdButton">GENERATE NEW CODE</button>
+    </div>
+</div>
+
+<!-- Notice Section -->
+<div class="notice">
+    <h3>Notice</h3>
+    <ul>
+      <li>This project is solely for educational purposes.</li>
+      <li>No personal data is collected or stored during the use of this project.</li>
+      <li>We do not collect any payment or fees. This service is completely free.</li>
+      <li>By using this project, you agree that it is intended for learning and demonstration only.</li>
+    </ul>
+  </div>
+  
+
+    <!-- Overlay for the popup -->
+    <div id="popupOverlay" class="popup-overlay" style="display: none;"></div>
+    <script src="https://kit.fontawesome.com/69d6fd586e.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
